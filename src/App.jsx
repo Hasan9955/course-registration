@@ -3,12 +3,14 @@ import Courses from "./components/Courses/Courses"
 import Carts from "./components/Carts/Carts"
 import Credit from "./components/Credit/Credit"
 import Price from "./components/Credit/Price"
+import Remaining from "./components/Credit/Remaining"
 
 
 
 function App() {
   const [courses, setCourses] = useState([])
   const [cartData, setCartData] = useState([])
+  const [remaining, setRemaining] = useState(20)
   const [credit, setCredit] = useState(0)
   const [price, setPrice] = useState(0)
 
@@ -32,6 +34,9 @@ function App() {
 
       const newPrice = price + course.price
       setPrice(newPrice)
+
+      const newRemaining = 20 - newCredit
+      setRemaining(newRemaining)
       
       setCredit(newCredit)
     }
@@ -62,7 +67,10 @@ function App() {
               ></Courses>))
           }
         </div>
-        <div>
+        <div className="border-2 p-4 rounded-lg md:w-1/4">
+          <Remaining
+          remaining={remaining}
+          ></Remaining>
           <Carts
             cartData={cartData}
             
