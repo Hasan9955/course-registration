@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { FaDollarSign } from 'react-icons/fa';
 import { BsBook } from 'react-icons/bs';
 
-const Courses = ({course}) => {
-    console.log(course)
+const Courses = ({course, handleCart}) => {
+    
     const {id, title, cover_img, description, price, credit} = course;
     return (
         <div className="space-y-5 border-2 p-3 rounded-xl">
@@ -17,7 +18,12 @@ const Courses = ({course}) => {
                 <p>Credit: {credit}hr</p>
 
             </div>
-            <button className="text-white font-bold
+            <button 
+            onClick={()=>{
+                handleCart(course)
+                
+            }}
+            className="text-white font-bold
              bg-[#2F80ED] p-3 rounded-xl w-full">Select</button>
         </div>
     );
