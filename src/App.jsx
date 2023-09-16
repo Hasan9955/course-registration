@@ -67,7 +67,7 @@ function App() {
               ></Courses>))
           }
         </div>
-        <div className="border-2 p-4 rounded-lg md:w-1/4">
+        <div className="border-2 p-4 rounded-lg md:w-1/4 ">
           <Remaining
           remaining={remaining}
           ></Remaining>
